@@ -1,7 +1,37 @@
 import os
 import sys
 #path = os.path.abspath(os.path.join(os.path.dirname(__file__)))
-path = "..//Database//stock_price_history//"
+path = "../Database/stock_price_history/"
+
+def get_data_from_dict(stock_data_dict, column, end_date, number_of_days, delay_days=0):
+
+    records = 0
+    skipped = 0
+    foundDate = False
+    theList = []
+
+    for x in range(len(stock_data_dict)):
+      if not foundDate:
+        if stock_data_dict[x]["bDate"] == end_date or number_of_days == -1:
+          foundDate = True
+      if foundDate:
+        if skipped < delay_days:
+          skipped += 1
+        elif records < number_of_days or number_of_days == -1:
+          if column != "bDate":
+            theList.append(float(stock_data_dict[x][column]))
+          else:
+            theList.append(stock_data_dict[x][column])
+          records += 1
+
+    if records == 0:
+        print("ERROR: End date '" + end_date + "' not found in " + stock + ".csv", end='\n')
+        return []
+    elif records < number_of_days and number_of_days != -1:
+        print("ERROR: Insufficient data for " + str(number_of_days) + " records in " + stock + ".csv - found " + str(records), end='\n')
+        return []
+    else:
+        return theList
 
 def get_data_list(stock, column, end_date, number_of_days, delay_days=0):
 

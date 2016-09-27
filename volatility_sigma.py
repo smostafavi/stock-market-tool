@@ -5,7 +5,7 @@
 import statistics;
 
 def volatility_sigma(stock):
-    stock_file = open("/home/pi/Desktop/LazarusPit/Database/stock_price_history/" + stock + ".csv", "r")
+    stock_file = open("/home/vince/Documents/SWEN670/Database/stock_price_history/" + stock + ".csv", "r")
 
     previous_return = 0
     returns = list()

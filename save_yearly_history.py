@@ -19,7 +19,7 @@ def save_yearly_history(stock):
     htmlrecords = htmltext.split("\\n")
 
 
-    sfile = open("C:\\Users\\Michael\\Desktop\\Stock Research\\Database\\stock_price_history\\" + stock +".csv", "w")
+    sfile = open("/home/vince/Documents/SWEN670/Database/stock_price_history/" + stock +".csv", "w")
     for x in htmlrecords:
         if (len(x) > 5):
             print(x, file=sfile)

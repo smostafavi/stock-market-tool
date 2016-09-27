@@ -4,11 +4,11 @@ from get_options_data import get_options_data
 
 def save_option_data(stock):
     try:
-        if os.path.exists("/home/pi/Desktop/LazarusPit/Database/options/" + stock + ".csv"):
-            ofile = open("/home/pi/Desktop/LazarusPit/Database/options/" + stock + ".csv", "a")
+        if os.path.exists("/home/vince/Documents/SWEN670/Database/options/" + stock + ".csv"):
+            ofile = open("/home/vince/Documents/SWEN670/Database/options/" + stock + ".csv", "a")
             newfile = "false"
         else:
-            ofile = open("/home/pi/Desktop/LazarusPit/Database/options/" + stock + ".csv", "w")
+            ofile = open("/home/vince/Documents/SWEN670/Database/options/" + stock + ".csv", "w")
             newfile = "true"
 
         options = get_options_data(stock)

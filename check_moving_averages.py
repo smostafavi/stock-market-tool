@@ -6,7 +6,7 @@ def check_moving_averages(stock):
     print(str(date.today().year) + "/" + str(date.today().month) +
                    "/" + str(date.today().day) + " " + time.strftime("%H:%M:%S") + " begin check moving averages")
 
-    ifile = open("/home/pi/Desktop/LazarusPit/Database/moving_averages/" + stock + ".csv", "r")
+    ifile = open("/home/vince/Documents/SWEN670/Database/moving_averages/" + stock + ".csv", "r")
 
     lastdate = ""
     last10chg = ""
@@ -34,7 +34,7 @@ def check_moving_averages(stock):
     # check if passed moving averages
     if ((last10chg == 'lower' or last20chg == 'lower') and
         ((current10chg == 'higher') or (current20chg == 'higer'))):
-        ofile = open("/home/pi/Desktop/LazarusPit/Database/buys/moving_averages.csv", "a")
+        ofile = open("/home/vince/Documents/SWEN670/Database/buys/moving_averages.csv", "a")
         print(currentdate + "," + stock +"," + current10chg +
               "," + current20chg + "," + last10chg + "," + last20chg, file=ofile )
         ofile.close()
