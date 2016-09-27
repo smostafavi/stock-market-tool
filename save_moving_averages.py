@@ -29,11 +29,11 @@ def save_moving_averages(stock):
     price = re.findall(pattern, htmltext)
 
     try:
-        if os.path.exists("/home/pi/Desktop/LazarusPit/Database/moving_averages/" + stock + ".csv"):
-            ofile = open("/home/pi/Desktop/LazarusPit/Database/moving_averages/" + stock + ".csv", "a")
+        if os.path.exists("/home/vince/Documents/SWEN670/Database/moving_averages/" + stock + ".csv"):
+            ofile = open("/home/vince/Documents/SWEN670/Database/moving_averages/" + stock + ".csv", "a")
             newfile = "false"
         else:
-            ofile = open("/home/pi/Desktop/LazarusPit/Database/moving_averages/" + stock + ".csv", "w")
+            ofile = open("/home/vince/Documents/SWEN670/Database/moving_averages/" + stock + ".csv", "w")
             print("date,price,10 day, 20 day, 10 day compare, 20 day compare", file = ofile)
             newfile = "true"
 

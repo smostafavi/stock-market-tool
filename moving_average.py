@@ -6,7 +6,7 @@
 import statistics;
 
 def moving_average(stock, days):
-    stock_file = open("/home/pi/Desktop/LazarusPit/Database/stock_price_history/" + stock + ".csv", "r")
+    stock_file = open("/home/vince/Documents/SWEN670/Database/stock_price_history/" + stock + ".csv", "r")
 
     sum_prices = 0.0
     days_temp = days

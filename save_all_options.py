@@ -15,7 +15,7 @@ def master():
 
     hour = datetime.now().hour
     weekday = datetime.now().weekday()
-    ifile = open("/home/pi/Desktop/LazarusPit/Database/stocks.txt", "r")
+    ifile = open("/home/vince/Documents/SWEN670/Database/stocks.txt", "r")
 
     for stock in ifile:
         stock = stock.replace("\n", "")            
