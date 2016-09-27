@@ -3,6 +3,19 @@ import sys
 #path = os.path.abspath(os.path.join(os.path.dirname(__file__)))
 path = "../Database/stock_price_history/"
 
+def get_data_from_dict_no_opts(stock_data_dict, column):
+	
+	theList = []
+	
+	if column == "bDate":
+		for x in range(len(stock_data_dict)):
+			theList.append(stock_data_dict[x][column])
+	else:
+		for x in range(len(stock_data_dict)):
+			theList.append(float(stock_data_dict[x][column]))
+			
+	return theList
+
 def get_data_from_dict(stock_data_dict, column, end_date, number_of_days, delay_days=0):
 
     records = 0
